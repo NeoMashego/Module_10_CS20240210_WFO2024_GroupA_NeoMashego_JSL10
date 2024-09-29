@@ -22,12 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // 🪲 Bug: Asynchronous function ?
     document.getElementById("solveRoom3").addEventListener("click", async() => {
         const response = await fetch('directions.json') 
-            const directions = response.json()
+            const directions = await response.json()
             const message = await navigateLabyrinth(directions)
-                    .then(message => {
                         // 🪲 Bug: Incorrect method
                         document.getElementById("room3Result").innerHTML = message;
-                    });
             });
     });
 
